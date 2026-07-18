@@ -13,6 +13,8 @@ def collatz_sequence(starting_num: int) -> Generator[int, None, None]:
         num = (num // 2) if num % 2 == 0 else (3 * num + 1)
         yield num
 
+def collatz(starting_num: int) -> list:
+    return list(collatz_sequence(starting_num))
 
 def get_longest(sequences: List[List[int]]) -> Tuple[int, List[int]]:
     longest = max(sequences, key=lambda s: len(s))
